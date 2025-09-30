@@ -1,0 +1,22 @@
+system-view immediately
+sysname CE1
+interface Vlanif 1
+ip add 192.168.56.100 24
+quit
+interface GE1/0/0
+undo shutdown
+quit
+stelnet server enable
+user-interface vty 0 4
+authentication-mode aaa
+protocol inbound ssh
+user privilege level 3
+quit
+aaa
+local-user python password irreversible-cipher Huawei12#$
+local-user python user-group manage-ug
+local-user python service-type ssh
+quit
+ssh user python
+ssh user python authentication-type password
+ssh user python service-type stelnet
