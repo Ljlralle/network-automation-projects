@@ -1,4 +1,4 @@
-from netmiko import ConnectHandler
+from netmiko import ConnectHandler  #使用netmiko重构代码，结果一样，更加简洁
 from pysnmp.hlapi import *
 
 # 设备连接参数
